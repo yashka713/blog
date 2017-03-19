@@ -51,3 +51,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#My Gem's
+#slim-rails provides Slim generators for get's Slim templates
+gem "slim-rails"
+#Use bootstrap for stiling templates
+gem 'bootstrap-sass'
+#registration & authentication users
+gem 'devise'
