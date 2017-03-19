@@ -1,15 +1,37 @@
 p#notice = notice
 
-p
-  strong Title:
+h2
+  strong
   = @post.title
 p
-  strong Content:
+  strong
   = @post.content
 p
   strong User:
   = @post.user.email
 
-= link_to 'Edit', edit_post_path(@post)
-'  |
-= link_to 'Back', posts_path
+/comments output
+h2 Comments
+= render @post.comments
+
+/add comment
+- if (user_signed_in?)
+
+  h2 Add a comment:
+  = form_for([@post, @post.comments.build]) do |f|
+    .form-group
+      p
+        = f.label :commenter
+        br
+        =f.text_field :commenter
+      p
+        = f.label :body
+        br
+        = f.text_area :body
+      p
+        = f.submit :class => 'btn btn-success btn-sm'
+
+- if ((user_signed_in?) && (@post.user.email == current_user.email))
+  = link_to 'Edit', edit_post_path(@post), class: "btn btn-warning btn-sm"
+'
+= link_to 'Back', posts_path, class: "btn btn-default btn-sm"
