@@ -59,3 +59,4 @@ gem "slim-rails"
 gem 'bootstrap-sass'
 #registration & authentication users
 gem 'devise'
+gem 'cancancan'

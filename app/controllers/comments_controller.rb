@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource param_method: :my_sanitizer
 
   def new
     @comment = Comment.new
@@ -20,5 +21,11 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.require(:comment).permit(:commenter, :body)
+  end
+
+  private
+
+  def my_sanitizer
+    params.require(:comment).permit(:body)
   end
 end
