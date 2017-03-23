@@ -54,3 +54,10 @@ footer.footer {
     margin: 0;
   }
 }
+
+#error_explanation {
+  display: none;
+}
+.field_with_errors{
+  background-color: transparent;
+}
