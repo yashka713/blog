@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource param_method: :my_sanitizer
+  # load_and_authorize_resource param_method: :my_sanitizer
 
   def new
     @comment = Comment.new
