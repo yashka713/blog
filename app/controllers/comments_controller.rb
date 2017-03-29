@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  # load_and_authorize_resource param_method: :my_sanitizer
 
   def new
     @comment = Comment.new
@@ -8,7 +7,14 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find_by(id: params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to post_path(@post)
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @post }
+      else
+        format.html { render :'posts/show', post: @post, danger: 'Comment was failed' }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
@@ -23,9 +29,4 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:commenter, :body)
   end
 
-  private
-
-  def my_sanitizer
-    params.require(:comment).permit(:body)
-  end
 end

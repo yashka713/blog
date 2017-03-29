@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
+    @comment = Comment.new
   end
 
   # GET /posts/new
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
         format.json { render :show, status: :created, location: @post }
       else
         # format.html { redirect_to new_post_url, @post.errors }
+        # flash[:error] = 'Error'
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end

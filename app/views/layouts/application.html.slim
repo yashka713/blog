@@ -1,0 +1,45 @@
+DOCTYPE
+html
+head
+  title Blog
+  = csrf_meta_tags
+
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+body
+nav class="navbar navbar-default"
+  .container
+    /<!-- Brand and toggle get grouped for better mobile display -->
+    .navbar-header
+      button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
+        span class="sr-only" Toggle navigation
+        span class="icon-bar"
+        span class="icon-bar"
+        span class="icon-bar"
+      a class="navbar-brand" href="/" Brand
+      ul class="nav navbar-nav navbar-left"
+        li
+          p class="navbar-text"
+            'liakhyaroslav@gmail.com yaroslav@example.com 000000
+    ul class="nav navbar-nav navbar-right"
+      - if user_signed_in?
+          li
+            p class="navbar-text"
+              'Signed in as #{current_user.email}
+          li
+            = link_to "User information", edit_user_registration_path
+          li
+            = link_to "Sign out", destroy_user_session_path, :method => :delete
+      - else
+          li
+            = link_to 'Sign up', new_user_registration_path
+          li
+            = link_to 'Sign in', new_user_session_path
+.container
+  = render 'layouts/messages'
+  = yield
+footer class="footer"
+  div class="container"
+    p class="about"
+      Created by Liakh Yaroslav for fun

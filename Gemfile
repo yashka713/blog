@@ -60,3 +60,4 @@ gem 'bootstrap-sass'
 #registration & authentication users
 gem 'devise'
 gem 'cancancan'
+gem 'simple_form'

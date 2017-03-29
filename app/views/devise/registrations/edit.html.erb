@@ -12,6 +12,27 @@
           </div>
         </div>
 
+        <div class="container-fluid">
+          <div class="form-group col-md-4">
+            <%= f.label :phone %><br/>
+            <%= f.text_field :phone, autofocus: true, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="form-group col-md-4">
+            <%= f.label :first_name %><br/>
+            <%= f.email_field :first_name, autofocus: true, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="form-group col-md-4">
+            <%= f.label :last_name %><br/>
+            <%= f.email_field :last_name, autofocus: true, class: "form-control" %>
+          </div>
+        </div>
+
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
