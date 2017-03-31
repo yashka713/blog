@@ -9,8 +9,8 @@ h1 Listing posts
     b Author:
     = post.user.email
     '
-  br
-  p = post.content
+    br
+    p = post.content
 
   - if can? :update, post
     = link_to 'Edit Post', edit_post_path(post), class: "btn btn-warning btn-sm"
