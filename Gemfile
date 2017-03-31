@@ -62,3 +62,5 @@ gem 'devise'
 gem 'cancancan'
 gem 'simple_form'
 gem 'gravtastic'
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"

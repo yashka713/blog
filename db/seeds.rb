@@ -6,10 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #add Users in db users
-2.times do |u|
-  User.create(first_name: "User ##{u} first_name", last_name: "User ##{u} last_name", email: "user#{u}@example.com",
-              password: "user#{u}@example.com", password_confirmation: "user#{u}@example.com", phone: "050645622#{u}")
-end
-2.times do |p|
-  Post.create(title: "User ##{p} Post title", content: "User ##{p} Post content", user_id: p+1)
-end
+
+#TODO
+#with gravatar
+User.create(first_name: 'Yaroslav',
+            last_name: 'Liakh',
+            email: 'liakhyaroslav@gmail.com',
+            password: 'liakhyaroslav@gmail.com',
+            password_confirmation: 'liakhyaroslav@gmail.com',
+            phone: '0506456220')
+#with custom avatar
+User.create(first_name: 'Peter',
+            last_name: 'Parker',
+            email: 'yaroslav@example.com',
+            password: 'yaroslav@example.com',
+            password_confirmation: 'yaroslav@example.com',
+            phone: '000000000')
+
+Post.create(title: 'Lorem Ipsum',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+laborum.',
+            user_id: 1)
