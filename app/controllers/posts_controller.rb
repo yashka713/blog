@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    authorize! :new, @post
   end
 
   # GET /posts/1/edit
@@ -38,6 +39,7 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+    authorize! :create, @post
   end
 
   # PATCH/PUT /posts/1
