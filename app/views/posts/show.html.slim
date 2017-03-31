@@ -11,7 +11,7 @@ p
   = link_to 'Edit Post', edit_post_path(@post), class: "btn btn-warning btn-sm"
 - if can? :destroy, @post
   = link_to "Delete Post", @post, method: :delete, class: "btn btn-danger btn-sm",
-              data: {confirm: "Are you sure?"}
+          data: {confirm: "Are you sure?"}
 
 /comments output
 .comment-all
