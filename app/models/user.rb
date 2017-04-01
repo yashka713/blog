@@ -18,6 +18,5 @@ class User < ApplicationRecord
   include Gravtastic
   gravtastic
   #carrierwave
-  # attr_accessible :avatar, :avatar_cache, :remove_avatar
 
 end

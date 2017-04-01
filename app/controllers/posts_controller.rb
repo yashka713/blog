@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource except: [ :index, :show]
 
   # GET /posts
   def index
@@ -18,7 +19,6 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    authorize! :update, @post
   end
 
   # POST /posts
@@ -46,7 +46,6 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1
   def destroy
-
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }

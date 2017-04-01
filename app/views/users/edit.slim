@@ -1,0 +1,44 @@
+h1 Editing User
+
+= simple_form_for @user, {:multipart => true} do | f |
+
+  .container-fluid
+    .form-group.col-md-4
+      p Custom avatar
+      = image_tag @user.avatar.url(:ava), class: "img-show"
+      p
+      = f.file_field :avatar
+    .form-group.col-md-4
+      p Gravatar
+      = image_tag current_user.gravatar_url
+
+  .container-fluid
+    .form-group.col-md-4
+      = f.input :email, autofocus: true, class: "form-control"
+    .form-group.col-md-4
+      = f.input :phone, autofocus: true, class: "form-control"
+  .container-fluid
+    .form-group.col-md-4
+      = f.input :first_name, autofocus: true, class: "form-control"
+  .container-fluid
+    .form-group.col-md-4
+      = f.input :last_name, autofocus: true, class: "form-control"
+  .container-fluid
+    .form-group.col-md-4
+      = f.input :password, autocomplete: "off", class: "form-control"
+  .container-fluid
+    .form-group.col-md-4
+      = f.input :password_confirmation, autocomplete: "off", class: "form-control"
+  .container-fluid
+    .form-group.col-md-4
+      = f.input :current_password, autocomplete: "off", class: "form-control"
+  .container-fluid
+    .form-group.col-md-4
+      .actions
+        = f.submit "Update", :class => 'btn btn-success btn-sm'
+  = link_to "Back", :back, class: "btn btn-default btn-sm"
+
+
+= link_to 'Show', @post, class: "btn btn-warning btn-sm"
+'
+= link_to 'Back', posts_path, class: "btn btn-default btn-sm"

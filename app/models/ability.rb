@@ -9,6 +9,9 @@ class Ability
     can :update, Post do |post|
       post.user == user
     end
+
+    can :create, Post unless user.email.nil?
+
     can :destroy, Post do |post|
       post.user == user
     end
@@ -20,18 +23,7 @@ class Ability
     end
 
     can :read, :all
-    # user.avatar = params[:file]
 
-# like this
-#     File.open('somewhere') do |f|
-#       user.avatar = f
-#     end
-
-    # user.save!
-    # user.avatar.url # => '/url/to/file.png'
-    # user.avatar.current_path # => 'path/to/file.png'
-    # user.avatar_identifier # => 'file.png'
-    #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
   end
