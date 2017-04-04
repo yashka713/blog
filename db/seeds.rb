@@ -14,14 +14,24 @@ User.create(first_name: 'Yaroslav',
             email: 'liakhyaroslav@gmail.com',
             password: 'liakhyaroslav@gmail.com',
             password_confirmation: 'liakhyaroslav@gmail.com',
-            phone: '0506456220')
+            phone: '506456220',
+            admin: false)
 #with custom avatar
 User.create(first_name: 'Peter',
             last_name: 'Parker',
             email: 'yaroslav@example.com',
             password: 'yaroslav@example.com',
             password_confirmation: 'yaroslav@example.com',
-            phone: '000000000')
+            phone: '442101010',
+            admin: false)
+#admin
+User.create!(first_name: 'Admin',
+             last_name: 'Admin',
+             email: 'Admin@example.com',
+             password: 'Admin@example.com',
+             password_confirmation: 'Admin@example.com',
+             phone: '123456789',
+             admin: true)
 
 Post.create(title: 'Lorem Ipsum',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

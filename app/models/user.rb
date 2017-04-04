@@ -14,9 +14,12 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :phone, uniqueness: true, length: { is: 9 }
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   #using gravatar
   include Gravtastic
   gravtastic
-  #carrierwave
 
 end
