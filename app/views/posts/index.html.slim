@@ -2,7 +2,7 @@ h1 Listing posts
 - if user_signed_in?
   = link_to 'New Post', new_post_path, class: "btn btn-success btn-sm"
 
-- @posts.each do |post|
+- @post.each do |post|
   h2 = link_to post.title, post_path(post)
   '
   div

@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
         format.html { redirect_to @post }
       else
         format.html { render :'posts/show', post: @post, danger: 'Comment was failed' }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
   end

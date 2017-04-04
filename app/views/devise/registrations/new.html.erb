@@ -1,6 +1,13 @@
 <div class="border-form-div">
   <h2>Sign up</h2>
-  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name),
+                      :html => {:multipart => true}) do |f| %>
+
+      <%= f.label :avatar do %>
+          <%= f.file_field :avatar %>
+          <%= f.hidden_field :avatar_cache %>
+      <% end %>
+
       <%= f.input :email, :autofocus => true, :placeholder => 'Email address' %>
       <%= f.input :phone, :autofocus => true, :placeholder => 'Phone number' %>
       <%= f.input :password, :placeholder => 'Password' %>
