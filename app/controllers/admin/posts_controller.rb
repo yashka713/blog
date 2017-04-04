@@ -37,7 +37,7 @@ class Admin::PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post}
+        format.html { render :index}
       else
         format.html { render :edit }
       end

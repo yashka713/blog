@@ -34,7 +34,11 @@ h1 Editing User
       = f.input :current_password, autocomplete: "off", class: "form-control"
   .container-fluid
     .form-group.col-md-4
+      = label_tag(:about, 'Write about self')
+      = f.text_area :about, autofocus: true, class: "form-control"
+  .container-fluid
+    .form-group.col-md-4
       .actions
         = f.submit "Update", :class => 'btn btn-success btn-sm'
 '
-= link_to 'Back', posts_path, class: "btn btn-default btn-sm"
+= link_to 'Back', admin_users_path, class: "btn btn-default btn-sm"

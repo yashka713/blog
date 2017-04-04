@@ -1,37 +1,46 @@
 .conteiner
   .row
-    .container-fluid
-      .col-md-4
+    .background-top.col-lg-12
+      .container-fluid
+        .avatar
+          - if @user.gravatar_url.nil?
+            = image_tag @user.gravatar_url
+          - else
+            = image_tag @user.avatar.url, class: 'users-show_avatar'
+.conteiner
+  .row
+    .col-lg-3
+      ul class="dropdown"
+        li class="dropdown-top"
+          a class="dropdown-top" href="#"
+          ul class="dropdown-inside"
+            li
+              = link_to "Sign out", destroy_user_session_path, :method => :delete
+            li
+              = link_to "Edit", edit_user_path(@user.id)
+    .col-lg-9
+      .show-fullname
+        h2
+          = @user.full_name
+      .show-information
+        .group-information
+          .show-title.col-lg-3
+            strong
+              | Email:
+          .show-description.col-lg-9
+            p
+              = @user.email
+        .group-information
+          .show-title.col-lg-3
+            strong
+              | Posts:
+          .show-description.col-lg-9
+            p
+              = @user.posts.count
         p
-          strong Custom avatar
-        = image_tag @user.avatar.url(:ava), class: "img-show_user"
-      .col-md-4
-        p
-          strong Gravatar
-        = image_tag @user.gravatar_url
-    .container-fluid
-      .col-md-4
-        p
-          strong email:
-          '
-          = @user.email
-    .container-fluid
-      .col-md-4
-        p
-          strong phone:
-          '
-          = "0#{@user.phone}"
-    .container-fluid
-      .col-md-4
-        p
-          strong first name:
-          '
-          = @user.first_name
-    .container-fluid
-      .col-md-4
-        p
-          strong last name:
-          '
-          = @user.last_name
+          strong
+            | About me:
+        .user-about
+          = @user.about
 
-    = link_to "Back", :back, class: "btn btn-default btn-sm"
+= link_to "Back", :back, class: "btn btn-default btn-sm"

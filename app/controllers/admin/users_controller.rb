@@ -17,9 +17,9 @@ class Admin::UsersController < Admin::AdminsController
     @user.avatar = params[:file]
 
     if @user.update(user_params)
-      render :'users/show'
+      redirect_to :'admin/posts/index'
     else
-      render :'users/edit'
+      redirect_to :'admin/posts/edit'
     end
 
   end
