@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   resources :users
+
+  namespace :admin do
+    resources :posts, :users do
+
+    end
+  end
 end

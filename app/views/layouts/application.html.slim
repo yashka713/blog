@@ -18,32 +18,49 @@ nav class="navbar navbar-default"
         span class="icon-bar"
         span class="icon-bar"
       a class="navbar-brand" href="/" Brand
-      ul class="nav navbar-nav navbar-left"
-        li
-          p class="navbar-text"
-            'liakhyaroslav@gmail.com yaroslav@example.com 000000
-    ul class="nav navbar-nav navbar-right"
-      - if user_signed_in?
+    ul.nav.navbar-nav.navbar-left
+      li
+        ul.navbar-text
+          li liakhyaroslav@gmail.com
+          li yaroslav@example.com
+          li Admin@example.com
+    ul.nav.navbar-nav.navbar-right
+      - if user_signed_in? # for non-admin User
+        /- if current_user.admin?
+          li
+            = link_to 'user ability', users_path
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+            | Show/edit user
+            span.caret
+          ul.dropdown-menu
+            li
+              = link_to "custom user show", user_path(current_user)
+            li.divider role="separator"
+            li
+              = link_to "custom user edit", edit_user_path(current_user.id)
           li
             p class="navbar-text"
               'Signed in as #{current_user.email}
-          /li
-            = link_to "User information", edit_user_registration_path
-          li
-            = link_to "custom user show", user_path(current_user)
-          li
-            = link_to "custom user edit", edit_user_path(current_user.id)
           li
             = link_to "Sign out", destroy_user_session_path, :method => :delete
       - else
+        li
+          = link_to 'Sign up', new_user_registration_path
+        li
+          = link_to 'Sign in', new_user_session_path
+  - if user_signed_in?
+    - if current_user.admin?
+      .container
+        ul.nav.navbar-nav
           li
-            = link_to 'Sign up', new_user_registration_path
+            = link_to 'Show All Users', admin_users_path
           li
-            = link_to 'Sign in', new_user_session_path
+            = link_to 'Show All Posts', admin_posts_path
 .container
   = render 'layouts/messages'
   = yield
 footer class="footer"
-  div class="container"
-    p class="about"
-      Created by Liakh Yaroslav for fun
+  .container
+    p.about
+      | Created by Liakh Yaroslav for fun

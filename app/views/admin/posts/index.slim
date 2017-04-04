@@ -1,0 +1,23 @@
+h2 All Posts:
+table.table
+  tr
+    th
+      | Title
+    th
+      | author
+    th
+      | Email
+  - @post.each do |post|
+    tr
+      td
+        = link_to "#{post.title}", edit_admin_post_path(post)
+      /- if post.user.exists?
+        td
+          = post.user.full_name
+        td
+          = post.user.email
+      td
+        = link_to 'Edit Post', edit_admin_post_path(post)
+      td
+        = link_to "Delete Post", post, method: :delete, class: "btn btn-danger btn-sm"
+                /data: {confirm: "Are you sure?"}
