@@ -33,10 +33,24 @@
         .group-information
           .show-title.col-lg-3
             strong
+              | Phone:
+          .show-description.col-lg-9
+            p
+              = @user.phone
+        .group-information
+          .show-title.col-lg-3
+            strong
               | Posts:
           .show-description.col-lg-9
             p
               = @user.posts.count
+        .group-information
+          .show-title.col-lg-3
+            strong
+              | Comments:
+          .show-description.col-lg-9
+            p
+              = @user.user_comments.count
         p
           strong
             | About me:

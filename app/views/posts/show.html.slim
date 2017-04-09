@@ -3,10 +3,10 @@ h2
   strong
   = @post.title
 p
-  = @post.content
-p
-  strong User:
+  strong Author:
   = @post.user.email
+p
+  = @post.content
 - if can? :update, @post
   = link_to 'Edit Post', edit_post_path(@post), class: "btn btn-warning btn-sm"
 - if can? :destroy, @post

@@ -18,6 +18,11 @@ class User < ApplicationRecord
     "#{self.first_name} #{self.last_name}"
   end
 
+  #return all comments of current user
+  def user_comments
+    Comment.all.where("commenter = ?", self.email)
+  end
+
   #using gravatar
   include Gravtastic
   gravtastic

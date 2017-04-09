@@ -4,20 +4,20 @@ table.table
     th
       | Title
     th
-      | author
+      | Author
     th
       | Email
+    th class="text-right"
+      | Edit/Remove
   - @post.each do |post|
     tr
       td
-        = link_to "#{post.title}", edit_admin_post_path(post)
-      /- if post.user.exists?
-        td
-          = post.user.full_name
-        td
-          = post.user.email
+        = link_to "#{post.title}", post_path(post)
       td
-        = link_to 'Edit Post', edit_admin_post_path(post)
+        = link_to "#{post.user.full_name}", user_path(post.user)
       td
+        = post.user.email
+      td class="text-right"
+        = link_to 'Edit Post', edit_admin_post_path(post), class: "btn btn-warning btn-sm"
         = link_to "Delete Post", post, method: :delete, class: "btn btn-danger btn-sm"
-                /data: {confirm: "Are you sure?"}
+        /data: {confirm: "Are you sure?"}

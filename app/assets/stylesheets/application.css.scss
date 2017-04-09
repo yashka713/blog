@@ -16,6 +16,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "users_show";
+@import "fonts";
+@import "comments";
 
 /* User sign in and sign forms. */
 .border-form-div {
@@ -96,4 +98,11 @@ p.post-output__body{
 
 p{
   word-wrap: break-word;
+}
+
+.asset-error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 180px);
 }
