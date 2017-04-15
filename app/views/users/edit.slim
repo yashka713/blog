@@ -1,6 +1,6 @@
 h1 Editing User
 
-= simple_form_for @user, {:multipart => true} do | f |
+= simple_form_for @user, {:multipart => true} do |f|
 
   .container-fluid
     .form-group.col-md-4
@@ -10,7 +10,7 @@ h1 Editing User
       = f.file_field :avatar
     .form-group.col-md-4
       p Gravatar
-      = image_tag current_user.gravatar_url
+      = image_tag @user.gravatar_url
 
   .container-fluid
     .form-group.col-md-4

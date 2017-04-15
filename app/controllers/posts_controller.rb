@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource except: [ :index, :show_user]
+  before_action :set_post, only: %i[show edit update destroy]
+  load_and_authorize_resource except: %i[index show_user]
 
   # GET /posts
   def index
@@ -18,8 +18,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit_user
-  def edit
-  end
+  def edit; end
 
   # POST /posts
   def create
@@ -37,7 +36,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post}
+        format.html { redirect_to @post }
       else
         format.html { render :edit }
       end
@@ -53,6 +52,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])

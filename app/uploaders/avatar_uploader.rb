@@ -1,5 +1,4 @@
 class AvatarUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -19,7 +18,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     # For Rails 3.1+ asset pipeline compatibility:
     # ActionController::Base.helpers.asset_path("/fallback/"+ [version_name, "default.png"].compact.join('_'))
 
-    "/assets/fallback/" + [version_name, "default.png"].compact.join('_')
+    '/assets/fallback/' + [version_name, 'default.png'].compact.join('_')
   end
 
   # Process files as they are uploaded:
@@ -31,17 +30,17 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :ava do
-    process :resize_to_fit => [128, 128]
+    process resize_to_fit: [128, 128]
   end
 
   version :thumb do
-    process :resize_to_fit => [25, 25]
+    process resize_to_fit: [25, 25]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    %w(png) #only png
+    %w[png] # only png
   end
 
   # Override the filename of the uploaded files:
@@ -49,5 +48,4 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end

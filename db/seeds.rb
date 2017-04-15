@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#add Users in db users
+# add Users in db users
 
-#TODO
-#with gravatar
+# TODO
+# with gravatar
 User.create(first_name: 'Yaroslav',
             last_name: 'Liakh',
             email: 'liakhyaroslav@gmail.com',
@@ -16,7 +16,7 @@ User.create(first_name: 'Yaroslav',
             password_confirmation: 'liakhyaroslav@gmail.com',
             phone: '506456220',
             admin: false)
-#with custom avatar
+# with custom avatar
 User.create(first_name: 'Peter',
             last_name: 'Parker',
             email: 'yaroslav@example.com',
@@ -24,7 +24,7 @@ User.create(first_name: 'Peter',
             password_confirmation: 'yaroslav@example.com',
             phone: '442101010',
             admin: false)
-#admin
+# admin
 User.create!(first_name: 'Admin',
              last_name: 'Admin',
              email: 'Admin@example.com',

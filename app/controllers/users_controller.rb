@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     @user = User.all
   end
@@ -10,6 +9,11 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if current_user == @user
+      render :edit
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -21,7 +25,6 @@ class UsersController < ApplicationController
     else
       render :'users/edit'
     end
-
   end
 
   private

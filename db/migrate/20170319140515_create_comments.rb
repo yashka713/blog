@@ -14,5 +14,4 @@ class CreateComments < ActiveRecord::Migration[5.0]
   #   rename_column :users, :email, :email_address
   #   rename_column :comments, :references, :email_address
   # end
-
 end

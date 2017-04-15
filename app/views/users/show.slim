@@ -4,20 +4,22 @@
       .container-fluid
         .avatar
           - if @user.gravatar_url.nil?
-            = image_tag @user.gravatar_url
+            = image_tag @user.gravatar_url, class: 'users-show users-show_gravatar'
           - else
-            = image_tag @user.avatar.url, class: 'users-show_avatar'
+            = image_tag @user.avatar.url, class: 'users-show users-show_avatar'
 .conteiner
   .row
     .col-lg-3
-      ul class="dropdown"
-        li class="dropdown-top"
-          a class="dropdown-top" href="#"
-          ul class="dropdown-inside"
-            li
-              = link_to "Sign out", destroy_user_session_path, :method => :delete
-            li
-              = link_to "Edit", edit_user_path(@user.id)
+      - if user_signed_in?
+        - if (@user.email == current_user.email) || current_user.try(:admin?)
+          ul class="dropdown"
+            li class="dropdown-top"
+              a class="dropdown-top" href="#"
+              ul class="dropdown-inside"
+                li
+                  = link_to "Sign out", destroy_user_session_path, :method => :delete
+                li
+                  = link_to "Edit", edit_user_path(@user.id)
     .col-lg-9
       .show-fullname
         h2
@@ -50,7 +52,7 @@
               | Comments:
           .show-description.col-lg-9
             p
-              = @user.user_comments.count
+              = user_comments(@user)
         p
           strong
             | About me:

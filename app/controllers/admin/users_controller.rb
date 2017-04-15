@@ -1,5 +1,4 @@
 class Admin::UsersController < Admin::AdminsController
-
   def index
     @user = User.all
   end
@@ -21,7 +20,6 @@ class Admin::UsersController < Admin::AdminsController
     else
       redirect_to :'admin/posts/edit'
     end
-
   end
 
   private

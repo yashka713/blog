@@ -13,7 +13,17 @@ div.comment {
 .create-date{
   padding-top: 5px;
 }
+.comment-date{
+  float: right;
+}
 
 .comment-body{
   padding: 5px 10px;
+  clear: both;
+}
+
+.comment-avatar{
+  width: 100px;
+  height: 100px;
+  float: left;
 }
