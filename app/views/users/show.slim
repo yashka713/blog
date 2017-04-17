@@ -46,6 +46,19 @@
           .show-description.col-lg-9
             p
               = @user.posts.count
+        div
+          table.table
+            tr
+              th
+                | Title
+              th
+                | Date
+            - @user.posts.each do |post|
+              tr
+                td
+                  = link_to "#{post.title}", post_path(post)
+                td
+                  = normalize_date(post.created_at)
         .group-information
           .show-title.col-lg-3
             strong

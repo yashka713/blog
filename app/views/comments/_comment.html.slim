@@ -3,8 +3,9 @@
     p class='create-date comment-info'
       = normalize_date(comment.created_at)
     p class='commenter comment-info'
+      /REFACTOR
       - unless find_user(comment.commenter).nil?
-        = link_to "#{comment.commenter}", user_path(find_user(comment.commenter))
+        = link_to "#{find_user(comment.commenter).full_name}", user_path(find_user(comment.commenter))
       - else
         = comment.commenter
   .commenter-avatar

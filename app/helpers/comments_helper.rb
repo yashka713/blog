@@ -17,7 +17,4 @@ module CommentsHelper
     User.all.where('email = ?', commenter).first
   end
 
-  # def show_page(commenter)
-  #
-  # end
 end
