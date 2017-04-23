@@ -3,14 +3,14 @@ h1 Listing posts
   = link_to 'New Post', new_post_path, class: "btn btn-success btn-sm"
 
 - @post.each do |post|
-  h2 = link_to post.title, post_path(post)
+  h2 = link_to post.title.html_safe, post_path(post)
   '
   div
     b Author:
     = post.user.email
     '
     br
-    p = post.content
+    p = post.content.html_safe
 
   - if can? :update, post
     = link_to 'Edit Post', edit_post_path(post), class: "btn btn-warning btn-sm"

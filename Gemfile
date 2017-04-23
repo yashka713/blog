@@ -64,3 +64,5 @@ gem 'gravtastic'
 gem 'mini_magick'
 gem 'rubocop', require: false
 gem 'simple_form'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'trix'

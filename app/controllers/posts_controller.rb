@@ -18,16 +18,19 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit_user
-  def edit; end
+  def edit;
+  end
 
   # POST /posts
   def create
     @post = current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, success: 'Post was successfully created.' }
+        format.html do
+          redirect_to @post, success: 'Post was successfully created.'
+        end
       else
-        format.html { render :new }
+        format.html {render :new}
       end
     end
   end
@@ -36,9 +39,9 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post }
+        format.html {redirect_to @post}
       else
-        format.html { render :edit }
+        format.html {render :edit}
       end
     end
   end
@@ -47,7 +50,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html {redirect_to posts_url, notice: 'Post was successfully destroyed.'}
     end
   end
 
@@ -70,4 +73,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :content, :user_id)
   end
+
 end

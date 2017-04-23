@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :phone, uniqueness: true, length: { is: 9 }
 
   def full_name
-    "#{first_name} #{last_name}"
+    "#{last_name} #{first_name}"
   end
 
   # return all comments of current user

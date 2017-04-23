@@ -1,12 +1,12 @@
 p#notice = notice
 h2
   strong
-  = @post.title
+  = @post.title.html_safe
 p
   strong Author:
   = @post.user.email
 p
-  = @post.content
+  = @post.content.html_safe
 - if can? :update, @post
   = link_to 'Edit Post', edit_post_path(@post), class: "btn btn-warning btn-sm"
 - if can? :destroy, @post

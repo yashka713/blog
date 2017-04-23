@@ -1,6 +1,7 @@
 class Admin::UsersController < Admin::AdminsController
   def index
-    @user = User.all
+    @q = User.ransack(params[:q])
+    @user = @q.result
   end
 
   def show
