@@ -62,7 +62,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'devise'
 gem 'gravtastic'
 gem 'mini_magick'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'rubocop', require: false
 gem 'simple_form'
-gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'trix'
