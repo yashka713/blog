@@ -21,33 +21,9 @@ RSpec.describe UsersController, type: :controller do
     end
 
     it 'renders the show template' do
-      get :show, params: { id: @user }
+      get :show, params: {id: @user}
       expect(response).to render_template :show
     end
 
-    it 'sign out from user show page' do
-      visit 'users/sign_in'
-      fill_in 'user_email', with: @user.email
-      fill_in 'user_password', with: @user.password
-      click_button 'Sign in'
-      get :show, params: { id: @user }
-      click_link('Sign out', visible: false)
-      expect(page).to have_text 'Signed out successfully.'
-    end
-  end
-
-  describe 'GET #edit' do
-    before(:each) do
-      @user = FactoryGirl.create(:user)
-      visit 'users/sign_in'
-      fill_in 'user_email', with: @user.email
-      fill_in 'user_password', with: @user.password
-      click_button 'Sign in'
-    end
-
-    it 'render the edit template' do
-      get :edit, params: { id: @user }
-      expect(response).to redirect_to('users/edit')
-    end
   end
 end
