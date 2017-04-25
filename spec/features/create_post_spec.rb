@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'rails_helper'
 
 feature 'Create Post' do
-
   scenario 'Creating Post' do
     log_in('user')
     visit 'posts/new'
@@ -11,5 +10,4 @@ feature 'Create Post' do
     click_button 'Create Post'
     expect(page).to have_content 'Test title'
   end
-
 end

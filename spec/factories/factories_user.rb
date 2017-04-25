@@ -8,7 +8,6 @@ FactoryGirl.define do
     admin false
   end
 
-  # This will use the User class (Admin would have been guessed)
   factory :admin, class: User do
     first_name 'Clark'
     last_name  'Kent'

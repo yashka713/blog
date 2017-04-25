@@ -8,7 +8,7 @@ AllCops:
     - db/migrate/*
     - Gemfile
     - config/*/*
-    - spec/**
+#    - spec/**/**
 Metrics/LineLength:
   # This will disable the rule completely, regardless what other options you put
   Enabled: false
@@ -21,5 +21,5 @@ Metrics/LineLength:
 
 Style/Documentation:
   Enabled: false
-ClassAndModuleChildren:
-  EnforcedStyle: compact
+Style/ClassAndModuleChildren:
+  Enabled: false

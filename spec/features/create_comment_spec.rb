@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'rails_helper'
 
 feature 'Create Comment' do
-
   scenario 'Creating Comment if user is loged in' do
     create_post('user')
     fill_in 'Your comment, please', with: 'test comment'
@@ -29,5 +28,4 @@ feature 'Create Comment' do
     click_button 'Create Comment'
     expect(page).to have_content 'test comment from not logged user'
   end
-
 end
