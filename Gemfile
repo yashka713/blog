@@ -70,3 +70,4 @@ gem 'simple_form'
 gem 'trix'
 gem 'capybara'
 gem "factory_girl_rails", "~> 4.0"
+gem 'kaminari'
