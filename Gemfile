@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -49,7 +51,7 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # My Gem's
 # slim-rails provides Slim generators for get's Slim templates
@@ -62,7 +64,9 @@ gem 'carrierwave', '~> 1.0'
 gem 'devise'
 gem 'gravtastic'
 gem 'mini_magick'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'rubocop', require: false
 gem 'simple_form'
-gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'trix'
+gem 'capybara'
+gem "factory_girl_rails", "~> 4.0"

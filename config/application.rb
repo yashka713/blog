@@ -9,9 +9,12 @@ require_relative 'boot'
 Bundler.require(*Rails.groups)
 
 module Blog
-  class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
-  end
+  class Application < Rails::Application; end
 end
+#
+# class Foo
+#   class Bar
+#   end
+# end
+# class Foo::Bar
+# end

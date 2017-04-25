@@ -4,7 +4,7 @@ module CommentsHelper
   end
 
   def user_avatar(commenter)
-    #HACK change it!
+    # HACK: change it!
     user = find_user(commenter)
     if user.nil?
       'default.png'
@@ -16,5 +16,4 @@ module CommentsHelper
   def find_user(commenter)
     User.all.where('email = ?', commenter).first
   end
-
 end

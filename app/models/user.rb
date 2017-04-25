@@ -18,9 +18,6 @@ class User < ApplicationRecord
     "#{last_name} #{first_name}"
   end
 
-  # return all comments of current user
-  def user_comments; end
-
   # using gravatar
   include Gravtastic
   gravtastic

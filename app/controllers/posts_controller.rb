@@ -18,8 +18,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit_user
-  def edit;
-  end
+  def edit; end
 
   # POST /posts
   def create
@@ -30,7 +29,7 @@ class PostsController < ApplicationController
           redirect_to @post, success: 'Post was successfully created.'
         end
       else
-        format.html {render :new}
+        format.html { render :new }
       end
     end
   end
@@ -39,9 +38,9 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html {redirect_to @post}
+        format.html { redirect_to @post }
       else
-        format.html {render :edit}
+        format.html { render :edit }
       end
     end
   end
@@ -50,7 +49,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html {redirect_to posts_url, notice: 'Post was successfully destroyed.'}
+      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
     end
   end
 
@@ -61,17 +60,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  # def find_post()
-  #   @post = Post.find(params[:id])
-  # end
-  #
-  # def find_posts()
-  #   @post = Post.all
-  # end
-
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
     params.require(:post).permit(:title, :content, :user_id)
   end
-
 end
