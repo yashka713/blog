@@ -28,7 +28,8 @@ h2 Add a comment:
       .hidden
         = f.text_field :commenter, value: current_user.email
     - else
-      = f.input :commenter, error: "comment can't be blank", minlength: '6'
+      = f.input :commenter, error: "comment can't be blank", minlength: '6',
+              label: 'Your name, please'
   .form-group.col-lg-12
     = f.input :body, label: 'Your comment, please'
   = f.submit class: 'btn btn-success btn-sm'

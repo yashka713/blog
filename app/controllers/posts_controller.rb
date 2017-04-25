@@ -60,14 +60,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  # def find_post()
-  #   @post = Post.find(params[:id])
-  # end
-  #
-  # def find_posts()
-  #   @post = Post.all
-  # end
-
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
     params.require(:post).permit(:title, :content, :user_id)
