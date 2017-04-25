@@ -21,9 +21,8 @@ RSpec.describe UsersController, type: :controller do
     end
 
     it 'renders the show template' do
-      get :show, params: {id: @user}
+      get :show, params: { id: @user }
       expect(response).to render_template :show
     end
-
   end
 end
