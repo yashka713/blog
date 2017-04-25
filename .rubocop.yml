@@ -8,7 +8,10 @@ AllCops:
     - db/migrate/*
     - Gemfile
     - config/*/*
+<<<<<<< HEAD
 #    - spec/**/**
+=======
+>>>>>>> 492817d... Merge branch 'rubocop'
 Metrics/LineLength:
   # This will disable the rule completely, regardless what other options you put
   Enabled: false
@@ -21,5 +24,10 @@ Metrics/LineLength:
 
 Style/Documentation:
   Enabled: false
+<<<<<<< HEAD
 Style/ClassAndModuleChildren:
   Enabled: false
+=======
+ClassAndModuleChildren:
+  EnforcedStyle: compact
+>>>>>>> 492817d... Merge branch 'rubocop'
