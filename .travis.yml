@@ -3,3 +3,4 @@ rvm:
   - 2.4.1
 script:
   - bundle exec rubocop --config .rubocop.yml app/ spec/ db/migrate
+  - bundle exec rspec
