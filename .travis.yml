@@ -2,4 +2,4 @@ language: ruby
 rvm:
   - 2.4.1
 script:
-  - bundle exec rubocop --config .rubocop.yml app/models/ app/controllers/ spec/
+  - bundle exec rubocop --config .rubocop.yml
