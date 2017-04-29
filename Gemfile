@@ -73,3 +73,5 @@ gem 'trix'
 gem 'capybara'
 gem "factory_girl_rails", "~> 4.0"
 gem 'kaminari'
+
+ruby 2.4.1
