@@ -2,4 +2,4 @@ language: ruby
 rvm:
   - 2.4.1
 script:
-  - bundle exec rubocop --rails
+  - bundle exec rubocop --force-exclusion db/schema.rb
