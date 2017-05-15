@@ -1,24 +1,40 @@
-# README
+[![Build Status](https://travis-ci.org/yashka713/blog.svg?branch=master)](https://travis-ci.org/yashka713/blog)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog
 
-Things you may want to cover:
+You can use this app follow by link [heroku](https://liakh-blog.herokuapp.com/)
+Staging:  [travis-ci](https://travis-ci.org/yashka713/blog/builds)
 
-* Ruby version
+Ruby version: **2.4.1**
 
-* System dependencies
+-----------------
+Prerequisites
+-------------
+Required software: `ruby`, `pg`
+ 
+Install
+-----------------
+```
+git clone https://github.com/yashka713/blog.git && cd your_repo
+```
+```
+bundle install
+```
+```
+rails db:setup
+```
 
-* Configuration
+Launch
+------------
+```
+bundle exec rails s
+```
+Navigate to [http://localhost:3000](http://localhost:3000)
 
-* Database creation
 
-* Database initialization
+App works with ```PG DB```
+-------------
+Test:
+```rubocop && rspec```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Created by Yaroslav Liakh
