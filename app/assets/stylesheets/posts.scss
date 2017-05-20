@@ -2,5 +2,7 @@
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .form-group > textarea{
-  min-height: 250px;
+  min-height: 10%;
+  width: 50%;
+  border-radius: 10px;
 }
