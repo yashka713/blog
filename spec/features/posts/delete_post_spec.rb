@@ -3,7 +3,7 @@ require 'rails_helper'
 Capybara.javascript_driver = :webkit
 
 feature 'Delete Post' do
-  scenario 'remove Post from menu', js:true do
+  scenario 'remove Post from menu', js: true do
     log_in('user')
     visit 'posts/new'
     fill_in_trix_editor 'textField_trix_input_post', with: 'Test title'
